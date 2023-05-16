@@ -21,6 +21,11 @@
 		.logos li {
 			margin: 0 10px;
 		}
+		.logos img {
+		width: 100px;
+		height: 100px;
+		object-fit: contain;
+		}
 		/* Style buttons */
 		.buttons {
 			list-style: none;
@@ -33,7 +38,7 @@
 			display: block;
 			width: 100%;
 			padding: 10px;
-			background-color: #4CAF50;
+			background-color: #ffffff;
 			color: white;
 			border: none;
 			border-radius: 5px;
@@ -41,25 +46,46 @@
 			transition: background-color 0.3s;
 		}
 		.buttons button:hover {
-			background-color: #3E8E41;
+			background-color: #ffffff;
 		}
 
 		/* Style image */
 		.round-img {
 			border-radius: 50%;
 		}
+
+		/* Set background color */
+		body {
+			background-color: #FFC0CB;
+		}
+		/* Style share button */
+		.share-button {
+			position: fixed;
+			top: 0;
+			right: 0;
+			margin: 10px;
+		}
 	</style>
+	<!-- Sharing function -->
+	<script>
+		function share() {
+			// Change the URL below to your own website URL
+			var url = "https://www.cccandice.com";
+			// Open the sharing dialog
+			window.open("https://www.instagram.com/?url=" + encodeURIComponent(url));
+		}
+	</script>
 </head>
 <body>
 	<header>
 		<img src="img/profile.png" alt="Your Name" class="round-img">
-		<h1>Candice</h1>
+		<h1>Welcome to Candice's Secret Garden</h1>
 	</header>
 	<main>
 		<ul class="logos">
 			<li><a href="https://www.instagram.com/cccandice404/"><img src="img/instagram.png" alt="Logo 1"></a></li>
 			<li><a href="https://www.patreon.com/cccandice/"><img src="img/patreon.png" alt="Logo 2"></a></li>
-			<li><a href="#"><img src="twitter.png" alt="Logo 3"></a></li>
+			<li><a href="#"><img src="img/twitter.png" alt="Logo 3"></a></li>
 		</ul>
 		<ul class="buttons">
 			<li><a href="https://www.instagram.com/cccandice404/"><button>Instagram</button></a></li>
@@ -68,7 +94,7 @@
 		</ul>
 	</main>
 	<footer>
-		<p>&copy; 2023 My Website</p>
+		<p>&copy; 2023 Candice</p>
 	</footer>
 </body>
 </html>
