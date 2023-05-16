@@ -37,8 +37,8 @@
 			margin: 0 10px;
 		}
 		.logos img {
-		width: 100px;
-		height: 100px;
+		width: 200px;
+		height: 200px;
 		object-fit: contain;
 		}
 		/* Style buttons */
@@ -49,16 +49,21 @@
 		.buttons li {
 			margin-bottom: 10px;
 		}
+
+		.buttons a {
+		text-decoration: none; /* Add this line to remove underline */
+		}
+
 		.buttons button {
-			display: block;
-			width: 100%;
-			padding: 10px;
-			background-color: #ffffff;
-			color: black;
-			border: 2px solid #4CAF50; /* Add border */
-			border-radius: 10px; /* Add border radius */
-			cursor: pointer;
-			transition: background-color 0.3s;
+		display: block;
+		width: 100%;
+		padding: 20px 10px; /* Increase vertical padding */
+		background-color: #ffffff;
+		color: black;
+		border: 2px solid #4CAF50;
+		border-radius: 10px;
+		cursor: pointer;
+		transition: background-color 0.3s;
 		}
 		.buttons button:hover {
 			background-color: #ffffff;
@@ -96,21 +101,38 @@
 	<!-- Sharing function -->
 	<script>
 	function share() {
-		// Change the URL below to your own website URL
-		var url = "https://www.cccandice.com";
-		// Copy the URL to the clipboard
-		navigator.clipboard.writeText(url);
+	// Change the URL below to your own website URL
+	var url = "https://www.cccandice.com";
+	// Copy the URL to the clipboard
+	navigator.clipboard.writeText(url).then(function() {
 		// Show the message
-		var message = document.getElementById("copy-message");
-		message.style.display = "block";
-		// Hide the message after 2 seconds
+		var message = document.createElement("span");
+		message.innerText = "Link copied!";
+		message.style.position = "fixed";
+		message.style.top = "0";
+		message.style.left = "50%";
+		message.style.transform = "translateX(-50%)";
+		message.style.padding = "10px";
+		message.style.backgroundColor = "#4CAF50";
+		message.style.color = "white";
+		message.style.fontSize = "16px";
+		message.style.borderRadius = "5px";
+		message.style.opacity = "0";
+		message.style.transition = "opacity 0.3s";
+		document.body.appendChild(message);
 		setTimeout(function() {
-			message.style.opacity = "0";
+		message.style.opacity = "1";
+		}, 100);
+		setTimeout(function() {
+		message.style.opacity = "0";
+		setTimeout(function() {
+			message.parentNode.removeChild(message);
+		}, 300);
 		}, 2000);
-		setTimeout(function() {
-			message.style.display = "none";
-			message.style.opacity = "1";
-		}, 2300);
+	}, function() {
+		// Handle error case
+		alert("Unable to copy link.");
+	});
 	}
 	</script>
 </head>
