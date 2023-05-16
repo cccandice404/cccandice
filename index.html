@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Candice's Secret Garden</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Mobile-friendly styles -->
 	<style>
 		/* Set font size for smaller screens */
@@ -22,9 +23,9 @@
 			margin: 0 10px;
 		}
 		.logos img {
-		width: 100px;
-		height: 100px;
-		object-fit: contain;
+			width: 100px;
+			height: 100px;
+			object-fit: contain;
 		}
 		/* Style buttons */
 		.buttons {
@@ -39,9 +40,9 @@
 			width: 100%;
 			padding: 10px;
 			background-color: #ffffff;
-			color: white;
-			border: none;
-			border-radius: 5px;
+			color: black;
+			border: 2px solid #4CAF50;
+			border-radius: 10px;
 			cursor: pointer;
 			transition: background-color 0.3s;
 		}
@@ -57,46 +58,119 @@
 		/* Set background color */
 		body {
 			background-color: #FFC0CB;
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
 		}
+
 		/* Style share button */
 		.share-button {
 			position: fixed;
 			top: 0;
 			right: 0;
 			margin: 10px;
+			font-size: 24px;
+			padding: 16px;
+			border-radius: 10px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+		.share-button:hover {
+			background-color: #3E8E41;
+		}
+
+		/* Style footer */
+		footer {
+			background-color: #ffffff;
+			height: 50%;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+
+		.footer-row {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 33.33%;
+			padding: 20px;
+		}
+
+		/* Style main content */
+		main {
+			padding: 20px;
+			margin: 0 auto;
+			max-width: 800px;
+		}
+
+		.main-content {
+			text-align: center;
+		}
+
+		.main-content h2 {
+			font-size: 36px;
+			margin-bottom: 20px;
+		}
+
+		.main-content p {
+			font-size: 18px;
+			line-height: 1.5;
+			margin-bottom: 20px;
 		}
 	</style>
-	<!-- Sharing function -->
+</head>
+<body>
+	<header>
+		<div class="logos">
+			<ul>
+				<li><a href="https://www.instagram.com/cccandice404/"><img src="img/instagram.png" alt="Logo 1"></a></li>
+				<li><a href="https://www.patreon.com/cccandice/"><img src="img/patreon.png" alt="Logo 2"></a></li>
+				<li><a href="#"><img src="img/twitter.png" alt="Logo 3"></a></li>
+			</ul>
+		</div>
+		<div class="main-content">
+			<img class="round-img" src="img/candice.png" alt="Candice's profile picture">
+			<h1>Candice's Secret Garden</h1>
+			<p>Welcome to my secret garden! Here I share my thoughts, interests, and life moments. Feel free to explore and leave a comment!</p>
+		</div>
+	</header>
+	<main>
+		<div class="main-content">
+			<h2>My Latest Thoughts</h2>
+			<p>Check out my latest blog post about my experience traveling to Japan. It was an amazing trip, and I can't wait to go back!</p>
+		</div>
+	</main>
+	<footer>
+		<div class="footer-row">
+			<ul class="logos">
+				<li><a href="https://www.instagram.com/cccandice404/"><img src="img/instagram.png" alt="Logo 1"></a></li>
+				<li><a href="https://www.patreon.com/cccandice/"><img src="img/patreon.png" alt="Logo 2"></a></li>
+				<li><a href="#"><img src="img/twitter.png" alt="Logo 3"></a></li>
+			</ul>
+		</div>
+		<div class="footer-row">
+			<ul class="buttons">
+				<li><a href="https://www.instagram.com/cccandice404/"><button>Instagram</button></a></li>
+				<li><a href="https://www.patreon.com/cccandice/"><button>Patreon 寫真</button></a></li>
+				<li><a href="#"><button>Twitter</button></a></li>
+			</ul>
+		</div>
+		<div class="footer-row">
+			<p>&copy; 2023 Candice</p>
+		</div>
+	</footer>
+	<button class="share-button" onclick="share()">Share</button>
 	<script>
 		function share() {
 			// Change the URL below to your own website URL
-			var url = "https://www.cccandice.com";
-			// Open the sharing dialog
-			window.open("https://www.instagram.com/?url=" + encodeURIComponent(url));
+			var url = "https://www.example.com";
+			// Copy the URL to the clipboard
+			navigator.clipboard.writeText(url);
 		}
 	</script>
-</head>
-<body>
-	<header style="text-align: center;">
-		<img src="img/profile.png" alt="Your Name" class="round-img">
-		<h1>Welcome to Candice's Secret Garden</h1>
-	</header>
-	<main>
-		<ul class="logos">
-			<li><a href="https://www.instagram.com/cccandice404/"><img src="img/instagram.png" alt="Logo 1"></a></li>
-			<li><a href="https://www.patreon.com/cccandice/"><img src="img/patreon.png" alt="Logo 2"></a></li>
-			<li><a href="#"><img src="img/twitter.png" alt="Logo 3"></a></li>
-		</ul>
-		<ul class="buttons">
-			<li><a href="https://www.instagram.com/cccandice404/"><button>Instagram</button></a></li>
-			<li><a href="https://www.patreon.com/cccandice/"><button>Patreon 寫真</button></a></li>
-			<li><a href="#"><button>Twitter</button></a></li>
-		</ul>
-		<!-- Share button -->
-		<button class="share-button" onclick="share()">Share</button>
-	</main>
-	<footer>
-		<p>&copy; 2023 Candice</p>
-	</footer>
 </body>
 </html>
